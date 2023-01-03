@@ -1,0 +1,26 @@
+<div class="container">
+    <p>Products</p>
+    <ul>
+        <li *ngFor="let product of products">
+            <a href="">
+                <img src="{{product.imageUrl}}" alt="">
+                <div class="content">
+                    <div class="name">
+                        {{product.name}}
+                    </div>
+                    <span class="favorite {{product.favorite?'':'not'}}">
+                        ❤
+                    </span>
+                    <!-- <star-rating 
+                            [value]="product.stars"
+                            [totalstars]="5"
+                            checkedcolor="red"
+                            uncheckedcolor="black"
+                            size="18px"
+                            [readonly]="true">
+                    </star-rating> -->
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -9,11 +9,11 @@ import { FoodService } from '../services/food/food.service';
 export class HomeComponent implements OnInit {
 
 
-  foods:String[] = [];
+  categories:String[] = [];
   constructor(private foodService:FoodService) { }
 
   ngOnInit(): void {
-    this.foods = this.foodService.getAll();
+    this.categories = this.foodService.getCategories();
   }
 
 }
