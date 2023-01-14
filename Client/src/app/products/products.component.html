@@ -11,14 +11,21 @@
                     <span class="favorite {{product.favorite?'':'not'}}">
                         ❤
                     </span>
+                    <div class="stars">
                     <!-- <star-rating 
                             [value]="product.stars"
                             [totalstars]="5"
                             checkedcolor="red"
                             uncheckedcolor="black"
-                            size="18px"
+                            size="20px"
                             [readonly]="true">
                     </star-rating> -->
+                </div>
+                </div>
+                <div class="price">
+                    <span>
+                        {{product.price}} NIS / {{product.piece}}
+                    </span>
                 </div>
             </a>
         </li>
