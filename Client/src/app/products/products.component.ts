@@ -18,13 +18,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       if (params.searchTerm)
-        this.products = this.foodService.getProducts().filter(product =>
-          product.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
+        this.products = this.foodService.getAllProductsBySearchTerm(params.searchTerm);
       else if (params.tag)
           this.products = this.foodService.getProductsByTag(params.tag);
       else
         this.products = this.foodService.getProducts();
-
     })
 
   }

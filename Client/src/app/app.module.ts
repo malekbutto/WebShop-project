@@ -9,6 +9,8 @@ import { ProductsComponent } from './products/products.component';
 import { SearchComponent } from './search/search.component';
 // import { RatingModule } from 'ng-starrating';
 import { FormsModule } from '@angular/forms';
+import { TagsComponent } from './tags/tags.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ProductsComponent,
     SearchComponent,
+    TagsComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
