@@ -28,7 +28,6 @@ export class FoodService {
 
   getProductById(id: number): Products{
     return this.getProducts().find(product => product.id ==id)!;
-
   }
 
   getProductsByTag(tag: string): Products[]{

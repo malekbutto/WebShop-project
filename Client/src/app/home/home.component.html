@@ -12,6 +12,9 @@
 <div class="container">
     <p>Products</p>
     <app-tags></app-tags>
+    <app-not-found [visible]="!products || products.length <= 0" notFoundMessage="Nothing Found!"
+    resetLinkText="Reset Search">
+</app-not-found>
     <ul>
         <li *ngFor="let product of products">
             <a routerLink="/{{product.tags}}/{{product.id}}">

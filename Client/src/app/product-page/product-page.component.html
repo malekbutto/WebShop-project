@@ -1,13 +1,17 @@
-<div class="container">
+<app-not-found [visible]="!product" notFoundMessage="Product Not Found!"
+    resetLinkText="Back To HomePage">
+</app-not-found>
+<div *ngIf="product" class="container">
     <img [src]="product.imageUrl" [alt]="product.name">
     <div class="details">
         <div class="header">
             <span class="name">
                 {{product.name}}
             </span>
-            <span class="favorite not">
+            <span class="favorite {{product.favorite?'':'not'}}">
                 ❤
             </span>
+        </div>
             <!-- <div class="rating">
                 <star-rating
                 [value]="product.stars"
@@ -18,12 +22,15 @@
                 [readonly]="true">
                 </star-rating>
             </div> -->
-            <span class="description">
+            <div class="description">
                 {{product.description}}
+            </div>
+            <div class="price">
+                <span>{{product.price}} NIS / {{product.piece}}</span>
+            </div>
+            <span class="material-symbols-outlined" (click)="addToCart()" aria-label="add to cart">
+                add_shopping_cart
             </span>
-            <span class="price">
-                <B>{{product.price}}</B>NIS
-            </span>
-        </div>
+            <!-- <button (click)="addToCart()">Add To Cart</button> -->
     </div>
 </div>
