@@ -16,13 +16,22 @@
                 </a>
             </div>
             <div>
-                <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
+                <!-- <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                </select>
+                </select> -->
+                <span class="material-symbols-outlined" (click)="changeQuantity(cartItem,'-1')">
+                    remove_circle_outline
+                </span>
+                <span class="quantity">
+                    {{productQuantity}}
+                </span>
+                <span class="material-symbols-outlined" (click)="changeQuantity(cartItem,'1')">
+                    add_circle_outline
+                </span>
             </div>
             <div>
                 {{cartItem.price}} NIS

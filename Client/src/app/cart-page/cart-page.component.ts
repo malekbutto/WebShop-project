@@ -10,8 +10,9 @@ import { CartItem } from '../shared/models/CartItem';
 })
 export class CartPageComponent implements OnInit {
 
-  cart!:Cart;
-  constructor(private cartService:CartService) {
+  cart!: Cart;
+  productQuantity: number = 1;
+  constructor(private cartService: CartService) {
 
     this.setCart();
   }
@@ -19,18 +20,23 @@ export class CartPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  removeFromCart(cartItem: CartItem){
+  removeFromCart(cartItem: CartItem) {
     this.cartService.removeFromCart(cartItem.product.id);
     this.setCart();
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
     const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(cartItem.product.id, quantity);
-    this.setCart();
+    this.productQuantity += quantity;
+    if (this.productQuantity <= 0)
+      this.removeFromCart(cartItem);
+    else {
+      this.cartService.changeQuantity(cartItem.product.id, this.productQuantity);
+      this.setCart();
+    }
   }
 
-  setCart():void{
+  setCart(): void {
     this.cart = this.cartService.getCart();
   }
 

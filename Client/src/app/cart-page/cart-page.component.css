@@ -67,6 +67,13 @@ ul .material-symbols-outlined:hover{
     cursor: pointer;
 }
 
+ul li .quantity{
+    font-size: 28px;
+    font-weight: 700;
+    justify-content: center;
+    text-decoration: underline;
+}
+
 .checkout{
     display: flex;
     flex-direction: column;
